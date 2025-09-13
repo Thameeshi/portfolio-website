@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || (data.personal.name + ' - Portfolio') %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13tXw2vN+XH+Hv4Hg==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="<%= data.personal.name %> - <%= data.personal.title %> specializing in full-stack development, UI/UX design, and modern web technologies.">
+    <meta name="keywords" content="full-stack developer, UI/UX, web development, React, Node.js, portfolio, <%= data.personal.name %>">
+    <meta name="author" content="<%= data.personal.name %>">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="<%= data.personal.name %> - Portfolio">
+    <meta property="og:description" content="<%= data.personal.title %> specializing in full-stack development and UI/UX design">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= process.env.SITE_URL || '' %>">
+    <meta property="og:image" content="/images/home.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= data.personal.name %> - Portfolio">
+    <meta name="twitter:description" content="<%= data.personal.title %> specializing in full-stack development and UI/UX design">
+    <meta name="twitter:image" content="/images/home.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="preload" href="/images/home.png" as="image">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#home" class="logo">Portfolio</a>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        
+        <!-- Mobile menu button -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1><%= data.personal.name %></h1>
+            <h3>And I'm a <span class="typing" id="typing"></span></h3>
+            <p><%= data.personal.description %></p>
+
+            <!-- Social Links -->
+            <div class="home-sci">
+            <a href="https://www.facebook.com/profile.php?id=61557323637578&mibextid=LQQJ4d" 
+            target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <img src="/images/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+
+                <a href="https://www.linkedin.com/in/thameeshi-senadheera-400b86224" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <img src="/images/linkedin.png" alt="linkedin" class="social-icon">
+                </a>
+                <a href="https://github.com/Thameeshi" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                   <img src="/images/github.png" alt="github" class="social-icon">
+                </a>
+                <a href="<%= data.social.twitter %>" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <img src="/images/instagram.png" alt="instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+
+        <!-- Right side: Image -->
+        <div class="image">
+            <img src="/images/home.png" alt="<%= data.personal.name %> - Profile Picture" loading="eager">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm <strong><%= data.personal.name %></strong>, a passionate <%= data.personal.title %> and UI/UX Enthusiast. 
+                        I enjoy crafting visually appealing and user-friendly digital experiences, developing scalable backend solutions, 
+                        and exploring new technologies to solve real-world problems.
+                    </p>
+                    <p>
+                        Currently, I'm a third-year IT undergraduate at the <strong><%= data.personal.university %></strong>. 
+                        I am seeking internship opportunities to learn, grow, and contribute to impactful projects.
+                    </p>
+                    <div class="download">
+                        <a href="<%= data.personal.resumeLink %>" class="btn-box" target="_blank" rel="noopener noreferrer">
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="/images/home.png" alt="About <%= data.personal.name %>" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <% data.skills.forEach(skill => { %>
+                    <div class="skill-card">
+                        <h3><%= skill.category %></h3>
+                        <p><%= skill.technologies %></p>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Featured Project</h2>
+            <div class="project-showcase">
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <div class="project-images">
+                            <% data.project.images.forEach((image, index) => { %>
+                                <img src="/images/<%= image %>" 
+                                     alt="<%= data.project.title %> Screenshot <%= index + 1 %>" 
+                                     class="project-img <%= index === 0 ? 'active' : '' %>"
+                                     loading="<%= index === 0 ? 'eager' : 'lazy' %>">
+                            <% }); %>
+                        </div>
+                        <div class="image-nav">
+                            <% data.project.images.forEach((image, index) => { %>
+                                <button class="nav-dot <%= index === 0 ? 'active' : '' %>" 
+                                        onclick="showImage(<%= index %>)"
+                                        aria-label="Show image <%= index + 1 %>"></button>
+                            <% }); %>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Thameeshi/court-booking-system" 
+                                   class="project-link" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   aria-label="View source code">
+                                    <img src="/images/github1.png" alt="github" class="social-icon">
+                                </a>
+                                <a href="<%= data.project.liveLink %>" 
+                                   class="project-link"
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   aria-label="View live demo">
+                                    <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3><%= data.project.title %></h3>
+                        <p><%= data.project.description %></p>
+                        <div class="project-features">
+                            <% data.project.features.forEach(feature => { %>
+                                <div class="feature">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                    <span><%= feature %></span>
+                                </div>
+                            <% }); %>
+                        </div>
+                        <div class="project-tech">
+                            <% data.project.technologies.forEach(tech => { %>
+                                <span><%= tech %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new opportunities and interesting projects.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p><%= data.personal.email %></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p><%= data.personal.phone %></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p><%= data.personal.location %></p>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" 
+                               id="name" 
+                               name="name" 
+                               placeholder="Your Name" 
+                               required
+                               maxlength="50"
+                               pattern="[A-Za-z\s]+"
+                               title="Name should only contain letters and spaces">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               placeholder="Your Email" 
+                               required
+                               maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" 
+                               id="subject" 
+                               name="subject" 
+                               placeholder="Subject" 
+                               required
+                               maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" 
+                                  name="message" 
+                                  placeholder="Your Message" 
+                                  rows="5" 
+                                  required
+                                  minlength="10"
+                                  maxlength="1000"></textarea>
+                    </div>
+                    <button type="submit" class="btn-box">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <%= currentYear %> <%= data.personal.name %>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    
+    <!-- Typing Effect -->
+    <script>
+        // Typing effect with data from server
+        const typingText = document.getElementById('typing');
+        const words = <%- JSON.stringify(data.personal.roles) %>;
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            if (!typingText || words.length === 0) return;
+            
+            const currentWord = words[wordIndex];
+            const currentText = currentWord.substring(0, charIndex);
+            typingText.textContent = currentText;
+
+            if (!isDeleting && charIndex < currentWord.length) {
+                charIndex++;
+                setTimeout(typeEffect, 100);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(typeEffect, 60);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(typeEffect, 800);
+            }
+        }
+
+        // Start typing effect when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(typeEffect, 500);
+        });
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "<%= data.personal.name %>",
+        "jobTitle": "<%= data.personal.title %>",
+        "description": "<%= data.personal.description.replace(/\n/g, ' ').substring(0, 150) %>",
+        "url": "<%= process.env.SITE_URL || '' %>",
+        "sameAs": [
+            "<%= data.social.linkedin %>",
+            "<%= data.social.github %>",
+            "<%= data.social.twitter %>"
+        ],
+        "email": "<%= data.personal.email %>",
+        "telephone": "<%= data.personal.phone %>",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "<%= data.personal.location %>"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "<%= data.personal.university %>"
+        },
+        "knowsAbout": [
+            "Full-Stack Development",
+            "UI/UX Design",
+            "JavaScript",
+            "React",
+            "Node.js",
+            "Web Development"
+        ]
+    }
+    </script>
+</body>
+</html>
