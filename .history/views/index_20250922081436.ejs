@@ -49,7 +49,6 @@
             <a href="#about" class="nav-link">About</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
-            <a href="#certifications" class="nav-link">Certifications</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
         
@@ -100,13 +99,14 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Hello! I'm <strong><%= data.personal.name %></strong>, a third-year undergraduate student in Information Technology & Management with
-                         a strong interest in <strong>Full-stack development</strong> and modern technologies. I enjoy working on projects that bring together usability, performance, and scalability. 
-                         My experience includes building solutions with React, Node.js, SQLite, and Firebase. Beyond academics, I am a curious learner and tech explorer with a growing 
-                         passion for Cloud Computing, Blockchain, and Web 3.0 based systems. I am always seeking opportunities to apply my skills
-                         in real-world projects and contribute to innovative solutions that push the boundaries of technology.
+                        Hello! I'm <strong><%= data.personal.name %></strong>, a passionate <%= data.personal.title %> and UI/UX Enthusiast. 
+                        I enjoy crafting visually appealing and user-friendly digital experiences, developing scalable backend solutions, 
+                        and exploring new technologies to solve real-world problems.
                     </p>
-
+                    <p>
+                        Currently, I'm a third-year IT undergraduate at the <strong><%= data.personal.university %></strong>. 
+                        I am seeking internship opportunities to learn, grow, and contribute to impactful projects.
+                    </p>
                     <div class="download">
                         <a href="<%= data.personal.resumeLink %>" class="btn-box" target="_blank" rel="noopener noreferrer">
                             Download Resume
@@ -138,113 +138,104 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <% data.projects.forEach((project, projectIndex) => { %>
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <div class="project-images">
-                                <% project.images.forEach((image, index) => { %>
-                                    <img src="/images/<%= image %>"
-                                         alt="<%= project.title %> Screenshot <%= index + 1 %>"
-                                         class="project-img <%= index === 0 ? 'active' : '' %>"
-                                         loading="<%= index === 0 && projectIndex === 0 ? 'eager' : 'lazy' %>">
-                                <% }); %>
-                            </div>
-                            <% if (project.images.length > 1) { %>
-                                <div class="image-nav">
-                                    <% project.images.forEach((image, index) => { %>
-                                        <button class="nav-dot <%= index === 0 ? 'active' : '' %>"
-                                                onclick="showProjectImage(<%= projectIndex %>, <%= index %>)"
-                                                aria-label="Show image <%= index + 1 %>"></button>
-                                    <% }); %>
-                                </div>
-                            <% } %>
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="<%= project.githubLink %>"
-                                       class="project-link"
-                                       target="_blank"
-                                       rel="noopener noreferrer"
-                                       aria-label="View source code">
-                                        <img src="/images/github1.png" alt="github" class="social-icon">
-                                    </a>
-                                    <% if (project.liveLink) { %>
-                                        <a href="<%= project.liveLink %>"
-                                           class="project-link"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
-                                           aria-label="View live demo">
-                                            <i class="fa-solid fa-up-right-from-square"></i>
-                                        </a>
-                                    <% } %>
-                                </div>
-                            </div>
+            <h2>Featured Project</h2>
+            <div class="project-showcase">
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <div class="project-images">
+                            <% data.project.images.forEach((image, index) => { %>
+                                <img src="/images/<%= image %>" 
+                                     alt="<%= data.project.title %> Screenshot <%= index + 1 %>" 
+                                     class="project-img <%= index === 0 ? 'active' : '' %>"
+                                     loading="<%= index === 0 ? 'eager' : 'lazy' %>">
+                            <% }); %>
                         </div>
-                        <div class="project-info">
-                            <h3><%= project.title %></h3>
-                            <p><%= project.description %></p>
-                            <div class="project-features">
-                                <% project.features.forEach(feature => { %>
-                                    <div class="feature">
-                                        <i class="fa-solid fa-check-circle"></i>
-                                        <span><%= feature %></span>
-                                    </div>
-                                <% }); %>
-                            </div>
-                            <div class="project-tech">
-                                <% project.technologies.forEach(tech => { %>
-                                    <span><%= tech %></span>
-                                <% }); %>
+                        <div class="image-nav">
+                            <% data.project.images.forEach((image, index) => { %>
+                                <button class="nav-dot <%= index === 0 ? 'active' : '' %>" 
+                                        onclick="showImage(<%= index %>)"
+                                        aria-label="Show image <%= index + 1 %>"></button>
+                            <% }); %>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <!-- FIXED: Made GitHub link dynamic -->
+                                <a href="<%= data.project.githubLink %>" 
+                                   class="project-link" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   aria-label="View source code">
+                                    <img src="/images/github1.png" alt="github" class="social-icon">
+                                </a>
+                                <a href="<%= data.project.liveLink %>" 
+                                   class="project-link"
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   aria-label="View live demo">
+                                    <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                <% }); %>
+                    <div class="project-info">
+                        <!-- UPDATED: Made project title dynamic -->
+                        <h3><%= data.project.title %></h3>
+                        <p><%= data.project.description %></p>
+                        <div class="project-features">
+                            <% data.project.features.forEach(feature => { %>
+                                <div class="feature">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                    <span><%= feature %></span>
+                                </div>
+                            <% }); %>
+                        </div>
+                        <div class="project-tech">
+                            <% data.project.technologies.forEach(tech => { %>
+                                <span><%= tech %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <!-- UPDATED: Made project title dynamic -->
+                        <h3><%= data.project.title %></h3>
+                        <p><%= data.project.description %></p>
+                        <div class="project-features">
+                            <% data.project.features.forEach(feature => { %>
+                                <div class="feature">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                    <span><%= feature %></span>
+                                </div>
+                            <% }); %>
+                        </div>
+                        <div class="project-tech">
+                            <% data.project.technologies.forEach(tech => { %>
+                                <span><%= tech %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <!-- UPDATED: Made project title dynamic -->
+                        <h3><%= data.project.title %></h3>
+                        <p><%= data.project.description %></p>
+                        <div class="project-features">
+                            <% data.project.features.forEach(feature => { %>
+                                <div class="feature">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                    <span><%= feature %></span>
+                                </div>
+                            <% }); %>
+                        </div>
+                        <div class="project-tech">
+                            <% data.project.technologies.forEach(tech => { %>
+                                <span><%= tech %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-     <!-- Certifications Section -->
-    <section class="certifications" id="certifications">
-        <div class="container">
-            <h2>Certifications & Training</h2>
-            <div class="certifications-grid">
-                <% data.certifications.forEach(certification => { %>
-                    <div class="certification-card">
-                        <div class="cert-icon" style="color: <%= certification.color %>;">
-                            <i class="fas <%= certification.icon %>"></i>
-                        </div>
-                        <div class="cert-content">
-                            <h3><%= certification.title %></h3>
-                            <div class="cert-issuer">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span><%= certification.issuer %></span>
-                            </div>
-                            <div class="cert-year">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span><%= certification.year %></span>
-                            </div>
-                            <p class="cert-description"><%= certification.description %></p>
-                        </div>
-                        <div class="cert-badge">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <% if (certification.certificateLink) { %>
-                            <div class="cert-link">
-                                <a href="<%= certification.certificateLink %>" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                aria-label="View <%= certification.title %> certificate"
-                                title="View Certificate">
-                                    View
-                                </a>
-                            </div>
-                        <% } %>
-                    </div>
-                <% }); %>
-            </div>
-        </div>
-    </section>
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -325,19 +316,6 @@
     <!-- Loading overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
-    </div>
-
-    <!-- Image Lightbox Modal -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <div class="lightbox-content">
-            <span class="lightbox-close" id="lightboxClose">&times;</span>
-            <img class="lightbox-image" id="lightboxImage" src="" alt="">
-            <div class="lightbox-caption" id="lightboxCaption"></div>
-            <div class="lightbox-nav">
-                <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
-                <button class="lightbox-next" id="lightboxNext">&#10095;</button>
-            </div>
-        </div>
     </div>
 
     <!-- Scripts -->

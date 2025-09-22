@@ -1,172 +1,14 @@
-// Enhanced Portfolio JavaScript for Multiple Projects with Lightbox
+// Enhanced Portfolio JavaScript for Multiple Projects
 
 // Store current image index for each project
 let currentImageIndices = [];
 let rotationIntervals = [];
-let lightboxData = [];
-let currentLightboxIndex = 0;
 
 // Initialize project image functionality
 function initializeProjects() {
     const projectCards = document.querySelectorAll('.project-card');
     currentImageIndices = new Array(projectCards.length).fill(0);
     rotationIntervals = new Array(projectCards.length).fill(null);
-    
-    // Build lightbox data from all project images
-    buildLightboxData();
-    
-    // Add click listeners to all project images
-    addImageClickListeners();
-}
-
-// Build lightbox data array with all images
-function buildLightboxData() {
-    lightboxData = [];
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach((card, projectIndex) => {
-        const projectTitle = card.querySelector('.project-info h3').textContent;
-        const images = card.querySelectorAll('.project-img');
-        
-        images.forEach((img, imageIndex) => {
-            lightboxData.push({
-                src: img.src,
-                alt: img.alt,
-                caption: `${projectTitle} - Image ${imageIndex + 1}`,
-                projectIndex: projectIndex,
-                imageIndex: imageIndex
-            });
-        });
-    });
-}
-
-// Add click listeners to project images
-function addImageClickListeners() {
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach((card, projectIndex) => {
-        const images = card.querySelectorAll('.project-img');
-        
-        images.forEach((img, imageIndex) => {
-            img.addEventListener('click', () => {
-                // Find the global index of this image in lightboxData
-                const globalIndex = lightboxData.findIndex(item => 
-                    item.projectIndex === projectIndex && item.imageIndex === imageIndex
-                );
-                openLightbox(globalIndex);
-            });
-            
-            // Add cursor pointer to indicate clickable
-            img.style.cursor = 'pointer';
-            
-            // Add hover effect
-            img.addEventListener('mouseenter', () => {
-                img.style.transform = 'scale(1.05)';
-                img.style.transition = 'transform 0.3s ease';
-            });
-            
-            img.addEventListener('mouseleave', () => {
-                img.style.transform = 'scale(1)';
-            });
-        });
-    });
-}
-
-// Lightbox functionality
-function openLightbox(index) {
-    if (index < 0 || index >= lightboxData.length) return;
-    
-    currentLightboxIndex = index;
-    const modal = document.getElementById('lightboxModal');
-    const image = document.getElementById('lightboxImage');
-    const caption = document.getElementById('lightboxCaption');
-    
-    const data = lightboxData[currentLightboxIndex];
-    image.src = data.src;
-    image.alt = data.alt;
-    caption.textContent = data.caption;
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // Stop all project rotations when lightbox is open
-    stopAllRotations();
-}
-
-function closeLightbox() {
-    const modal = document.getElementById('lightboxModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    
-    // Restart rotations after lightbox closes
-    setTimeout(() => {
-        startAllImageRotations();
-    }, 500);
-}
-
-function nextLightboxImage() {
-    currentLightboxIndex = (currentLightboxIndex + 1) % lightboxData.length;
-    updateLightboxImage();
-}
-
-function prevLightboxImage() {
-    currentLightboxIndex = (currentLightboxIndex - 1 + lightboxData.length) % lightboxData.length;
-    updateLightboxImage();
-}
-
-function updateLightboxImage() {
-    const image = document.getElementById('lightboxImage');
-    const caption = document.getElementById('lightboxCaption');
-    const data = lightboxData[currentLightboxIndex];
-    
-    // Add fade effect
-    image.style.opacity = '0';
-    
-    setTimeout(() => {
-        image.src = data.src;
-        image.alt = data.alt;
-        caption.textContent = data.caption;
-        image.style.opacity = '1';
-    }, 150);
-}
-
-// Initialize lightbox event listeners
-function initializeLightbox() {
-    const modal = document.getElementById('lightboxModal');
-    const closeBtn = document.getElementById('lightboxClose');
-    const prevBtn = document.getElementById('lightboxPrev');
-    const nextBtn = document.getElementById('lightboxNext');
-    
-    // Close button
-    closeBtn.addEventListener('click', closeLightbox);
-    
-    // Navigation buttons
-    prevBtn.addEventListener('click', prevLightboxImage);
-    nextBtn.addEventListener('click', nextLightboxImage);
-    
-    // Close on outside click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeLightbox();
-        }
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (modal.classList.contains('active')) {
-            switch(e.key) {
-                case 'Escape':
-                    closeLightbox();
-                    break;
-                case 'ArrowLeft':
-                    prevLightboxImage();
-                    break;
-                case 'ArrowRight':
-                    nextLightboxImage();
-                    break;
-            }
-        }
-    });
 }
 
 // Show specific image for a specific project
@@ -190,16 +32,6 @@ function showProjectImage(projectIndex, imageIndex) {
     currentImageIndices[projectIndex] = imageIndex;
 }
 
-// Stop all rotations
-function stopAllRotations() {
-    rotationIntervals.forEach((interval, index) => {
-        if (interval) {
-            clearInterval(interval);
-            rotationIntervals[index] = null;
-        }
-    });
-}
-
 // Start image rotation for all projects
 function startAllImageRotations() {
     const projectCards = document.querySelectorAll('.project-card');
@@ -207,8 +39,8 @@ function startAllImageRotations() {
     projectCards.forEach((projectCard, projectIndex) => {
         const images = projectCard.querySelectorAll('.project-img');
         
-        // Only start rotation if there are multiple images and no existing interval
-        if (images.length > 1 && !rotationIntervals[projectIndex]) {
+        // Only start rotation if there are multiple images
+        if (images.length > 1) {
             rotationIntervals[projectIndex] = setInterval(() => {
                 const nextIndex = (currentImageIndices[projectIndex] + 1) % images.length;
                 showProjectImage(projectIndex, nextIndex);
@@ -554,9 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize projects
     initializeProjects();
-    
-    // Initialize lightbox
-    initializeLightbox();
     
     // Start image rotations
     setTimeout(() => {

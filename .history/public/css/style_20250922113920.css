@@ -1,10 +1,5 @@
 /* Reset */
-* {
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+
 
 /* Body */
 body {
@@ -129,28 +124,22 @@ body {
 
 /* Social Icon Size */
 .social-icon {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
 
 /* Image next to home-content */
 .image {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: auto;
     animation: float 3s ease-in-out infinite;
 }
-
 .image img {
-    width: 100%;
-    max-width: 1500px; /* increase for larger scaling */
-    height: 700px;      /* keeps aspect ratio */
+    width: 1500px;
+    height: 1000px;
     margin-left: 100px;
-    margin-top: 100px;
-    transform: scale(1.2); /* scales the image 20% larger */
-    transition: transform 0.3s ease;
+    margin-top: 150px;
 }
 
 /* Float animation */

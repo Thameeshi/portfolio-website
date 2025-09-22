@@ -129,28 +129,22 @@ body {
 
 /* Social Icon Size */
 .social-icon {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
 
 /* Image next to home-content */
 .image {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: auto;
     animation: float 3s ease-in-out infinite;
 }
-
 .image img {
-    width: 100%;
-    max-width: 1500px; /* increase for larger scaling */
-    height: 700px;      /* keeps aspect ratio */
+    width: 1500px;
+    height: 1000px;
     margin-left: 100px;
-    margin-top: 100px;
-    transform: scale(1.2); /* scales the image 20% larger */
-    transition: transform 0.3s ease;
+    margin-top: 150px;
 }
 
 /* Float animation */
@@ -585,228 +579,6 @@ body {
         margin-right: -60px;
     }
 }
-
-/* Add these styles to your CSS file after the Skills section styles */
-
-/* Certifications Section */
-.certifications {
-    padding: 80px 10%;
-    margin-top: 50px;
-}
-
-.certifications h2 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #0ef;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    margin-top: 3rem;
-}
-
-.certification-card {
-    background: #1b1045;
-    padding: 30px 25px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(14, 239, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(14, 239, 255, 0.1);
-}
-
-.certification-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(14, 239, 255, 0.3);
-}
-
-.certification-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #0ef, #E96AFD);
-}
-
-.cert-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.cert-content h3 {
-    font-size: 18px;
-    color: #E96AFD;
-    margin-bottom: 15px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.cert-issuer,
-.cert-year {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #ededed;
-    opacity: 0.9;
-}
-
-.cert-issuer i,
-.cert-year i {
-    color: #0ef;
-    font-size: 12px;
-    width: 16px;
-}
-
-.cert-description {
-    font-size: 13px;
-    line-height: 1.6;
-    color: #ededed;
-    margin-top: 15px;
-    opacity: 0.8;
-}
-
-.cert-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 20px;
-    color: rgba(14, 239, 255, 0.3);
-    transition: all 0.3s ease;
-}
-
-.certification-card:hover .cert-badge {
-    color: #0ef;
-    transform: rotate(15deg) scale(1.1);
-}
-
-.cert-link {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-}
-
-.certification-card:hover .cert-link {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cert-link a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(rgba(7, 79, 85, 1));
-    border-radius: 6px; /* small rounding, or set 0 for sharp corners */
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(14, 239, 255, 0.3);
-}
-
-
-.cert-link a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(14, 239, 255, 0.5);
-    background: linear-gradient( #afa9afff);
-}
-
-.cert-link a:active {
-    transform: scale(0.95);
-}
-
-/* Responsive Design for Certifications */
-@media (max-width: 1024px) {
-    .certifications-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    .certification-card {
-        padding: 25px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .certifications {
-        padding: 60px 5%;
-    }
-    
-    .certifications-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .certification-card {
-        padding: 25px 20px;
-        padding-bottom: 50px; /* Extra space for mobile link */
-    }
-    
-    .cert-content h3 {
-        font-size: 16px;
-    }
-    
-    .cert-icon {
-        font-size: 35px;
-        margin-bottom: 15px;
-    }
-    
-    .certifications h2 {
-        font-size: 28px;
-    }
-    
-    /* Show link on mobile by default */
-    .cert-link {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .cert-link a {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .certification-card {
-        padding: 20px 15px;
-    }
-    
-    .cert-content h3 {
-        font-size: 15px;
-        margin-bottom: 12px;
-    }
-    
-    .cert-issuer,
-    .cert-year {
-        font-size: 13px;
-        margin-bottom: 8px;
-    }
-    
-    .cert-description {
-        font-size: 12px;
-        margin-top: 12px;
-    }
-    
-    .cert-icon {
-        font-size: 30px;
-        margin-bottom: 12px;
-    }
 }
 
 /* Contact Section */

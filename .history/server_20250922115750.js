@@ -12,12 +12,12 @@ const portfolioData = {
     personal: {
         name: "Thameeshi Senadheera",
         title: "Full-Stack Developer",
-        description: "As an undergraduate IT student at the University of Moratuwa, I am passionate about designing and developing modern digital solutions that solve real-world problems. I am currently seeking an internship where I can contribute my skills, collaborate with industry professionals, and continue to grow as a future technology leader.",
-        roles: ["Full-Stack Developer", "Data & Cloud Enthusiast", "Problem Solver", "Tech Explorer","Blockchain & Web3 Learner"],
+        description: "I'm passionate about creating innovative web solutions and user-friendly interfaces. Currently exploring the latest technologies in web development and seeking opportunities to contribute to impactful projects.",
+        roles: ["Full-Stack Developer", "UI/UX Enthusiast", "Problem Solver", "Tech Explorer"],
         university: "University of Moratuwa",
         email: "thameeshisenade@gmail.com",
         phone: "+94 702 858 628",
-        location: "Rathnapura, Sri Lanka",
+        location: "Colombo, Sri Lanka",
         resumeLink: "https://drive.google.com/file/d/1_XWpHF0YCI-AnaRojNYaUupQ7_B2FhQj/view?usp=drive_link"
     },
     social: {
@@ -64,8 +64,7 @@ const portfolioData = {
                 "User authentication and profile management",
                 "Admin dashboard for court management",
                 "Booking history and cancellation system",
-                "Editable court details,Delete courts,Add new courts",
-                "Minting NFT receipts for bookings",
+                "Email notifications for bookings",
                 "Responsive design for all devices"
             ],
             technologies: ["React", "Tailwind CSS", "Node.js", "Express.js", "HotPocket", "XRPL","Web3"]
@@ -77,10 +76,12 @@ const portfolioData = {
             liveLink: "https://ecommerce-demo.netlify.app",
             images: ["project1.jpg"],
             features: [
-                "Real-Time Monitoring",
-                "Water Quality Assurance",
-                "Automatic Alerts & Notifications",
-                "Low-Cost & Energy-Efficient",
+                "Product catalog with advanced filtering",
+                "Shopping cart and secure checkout",
+                "User accounts and order tracking",
+                "Admin panel for inventory management",
+                "Payment gateway integration",
+                "Mobile-responsive design"
             ],
             technologies: ["ESP32", "C++"]
         },
@@ -91,11 +92,12 @@ const portfolioData = {
             liveLink: "https://drive.google.com/file/d/1i6MCCZZyo2MdEPiyZBWQrkTooHw2FmlJ/view?usp=sharing",
             images: ["laravel1.png", "laravel2.png"],
             features: [
-                "Secure User Authenticationt",
-                "Role-Based Access Control (RBAC)",
-                "Patient Data Management",
-                "Appointment Scheduling",
-                "Medical History Tracking",
+                "Drag-and-drop task management",
+                "Team collaboration features",
+                "Project progress tracking",
+                "Deadline and notification system",
+                "File sharing and comments",
+                "Analytics and reporting dashboard"
             ],
             technologies: ["Laravel", "PHP", "MySQL", "RESTful APIs", "Tailwind CSS"]
         },

@@ -129,28 +129,22 @@ body {
 
 /* Social Icon Size */
 .social-icon {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
 
 /* Image next to home-content */
 .image {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: auto;
     animation: float 3s ease-in-out infinite;
 }
-
 .image img {
-    width: 100%;
-    max-width: 1500px; /* increase for larger scaling */
-    height: 700px;      /* keeps aspect ratio */
+    width: 1500px;
+    height: 1000px;
     margin-left: 100px;
-    margin-top: 100px;
-    transform: scale(1.2); /* scales the image 20% larger */
-    transition: transform 0.3s ease;
+    margin-top: 150px;
 }
 
 /* Float animation */
@@ -709,15 +703,14 @@ body {
     justify-content: center;
     width: 35px;
     height: 35px;
-    background: linear-gradient(rgba(7, 79, 85, 1));
-    border-radius: 6px; /* small rounding, or set 0 for sharp corners */
+    background: linear-gradient(135deg, #0ef, #E96AFD);
+    border-radius: 50%;
     color: white;
     text-decoration: none;
     font-size: 14px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(14, 239, 255, 0.3);
 }
-
 
 .cert-link a:hover {
     transform: scale(1.1);

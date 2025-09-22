@@ -12,8 +12,8 @@ const portfolioData = {
     personal: {
         name: "Thameeshi Senadheera",
         title: "Full-Stack Developer",
-        description: "As an undergraduate IT student at the University of Moratuwa, I am passionate about designing and developing modern digital solutions that solve real-world problems. I am currently seeking an internship where I can contribute my skills, collaborate with industry professionals, and continue to grow as a future technology leader.",
-        roles: ["Full-Stack Developer", "Data & Cloud Enthusiast", "Problem Solver", "Tech Explorer","Blockchain & Web3 Learner"],
+        description: "I'm passionate about creating innovative web solutions and user-friendly interfaces. Currently exploring the latest technologies in web development and seeking opportunities to contribute to impactful projects.",
+        roles: ["Full-Stack Developer", "Data & Cloud Enthusiast",, "Problem Solver", "Tech Explorer","Blockchain & Web3 Learner"],
         university: "University of Moratuwa",
         email: "thameeshisenade@gmail.com",
         phone: "+94 702 858 628",

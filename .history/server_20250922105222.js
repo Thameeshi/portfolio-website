@@ -12,13 +12,13 @@ const portfolioData = {
     personal: {
         name: "Thameeshi Senadheera",
         title: "Full-Stack Developer",
-        description: "As an undergraduate IT student at the University of Moratuwa, I am passionate about designing and developing modern digital solutions that solve real-world problems. I am currently seeking an internship where I can contribute my skills, collaborate with industry professionals, and continue to grow as a future technology leader.",
-        roles: ["Full-Stack Developer", "Data & Cloud Enthusiast", "Problem Solver", "Tech Explorer","Blockchain & Web3 Learner"],
+        description: "I'm passionate about creating innovative web solutions and user-friendly interfaces. Currently exploring the latest technologies in web development and seeking opportunities to contribute to impactful projects.",
+        roles: ["Full-Stack Developer", "UI/UX Enthusiast", "Problem Solver", "Tech Explorer"],
         university: "University of Moratuwa",
         email: "thameeshisenade@gmail.com",
-        phone: "+94 702 858 628",
-        location: "Rathnapura, Sri Lanka",
-        resumeLink: "https://drive.google.com/file/d/1_XWpHF0YCI-AnaRojNYaUupQ7_B2FhQj/view?usp=drive_link"
+        phone: "+94 702 858",
+        location: "Colombo, Sri Lanka",
+        resumeLink: "/documents/resume.pdf"
     },
     social: {
         facebook: "https://www.facebook.com/profile.php?id=61557323637578&mibextid=LQQJ4d",
@@ -29,27 +29,27 @@ const portfolioData = {
     skills: [
         {
             category: "Frontend Development",
-            technologies: "React, HTML5, CSS3, JavaScript, TypeScript, Tailwind CSS"
+            technologies: "React, Vue.js, HTML5, CSS3, JavaScript, TypeScript, Tailwind CSS"
         },
         {
             category: "Backend Development",
-            technologies: "Node.js, Express.js, Python, PHP, REST APIs"
+            technologies: "Node.js, Express.js, Python, PHP, REST APIs, GraphQL"
         },
         {
             category: "Database Management",
-            technologies: "MongoDB, MySQL, Firebase,SQLite"
+            technologies: "MongoDB, MySQL, PostgreSQL, Firebase, Redis"
         },
         {
             category: "DevOps & Tools",
-            technologies: "Git, Docker, AWS, VS Code, Figma"
+            technologies: "Git, Docker, AWS, Heroku, Linux, VS Code, Figma"
+        },
+        {
+            category: "UI/UX Design",
+            technologies: "Figma, Adobe XD, Sketch, Wireframing, Prototyping"
         },
         {
             category: "Mobile Development",
             technologies: "React Native, Flutter, Android Studio"
-        },
-        {
-            category: "Blockchain Development",
-            technologies: "Web 3.0,HotPocket, XRPL"
         }
     ],
     projects: [
@@ -64,8 +64,7 @@ const portfolioData = {
                 "User authentication and profile management",
                 "Admin dashboard for court management",
                 "Booking history and cancellation system",
-                "Editable court details,Delete courts,Add new courts",
-                "Minting NFT receipts for bookings",
+                "Email notifications for bookings",
                 "Responsive design for all devices"
             ],
             technologies: ["React", "Tailwind CSS", "Node.js", "Express.js", "HotPocket", "XRPL","Web3"]
@@ -77,10 +76,12 @@ const portfolioData = {
             liveLink: "https://ecommerce-demo.netlify.app",
             images: ["project1.jpg"],
             features: [
-                "Real-Time Monitoring",
-                "Water Quality Assurance",
-                "Automatic Alerts & Notifications",
-                "Low-Cost & Energy-Efficient",
+                "Product catalog with advanced filtering",
+                "Shopping cart and secure checkout",
+                "User accounts and order tracking",
+                "Admin panel for inventory management",
+                "Payment gateway integration",
+                "Mobile-responsive design"
             ],
             technologies: ["ESP32", "C++"]
         },
@@ -91,11 +92,12 @@ const portfolioData = {
             liveLink: "https://drive.google.com/file/d/1i6MCCZZyo2MdEPiyZBWQrkTooHw2FmlJ/view?usp=sharing",
             images: ["laravel1.png", "laravel2.png"],
             features: [
-                "Secure User Authenticationt",
-                "Role-Based Access Control (RBAC)",
-                "Patient Data Management",
-                "Appointment Scheduling",
-                "Medical History Tracking",
+                "Drag-and-drop task management",
+                "Team collaboration features",
+                "Project progress tracking",
+                "Deadline and notification system",
+                "File sharing and comments",
+                "Analytics and reporting dashboard"
             ],
             technologies: ["Laravel", "PHP", "MySQL", "RESTful APIs", "Tailwind CSS"]
         },
@@ -116,15 +118,14 @@ const portfolioData = {
             technologies: ["Ballerina", "HTML5","CSS3", "JavaScript", "Chart.js", "Google OAuth integration",]
         }
     ],
-      certifications: [
+     certifications: [
         {
             title: "AWS Cloud Practitioner Essentials",
             issuer: "Amazon Web Services (AWS)",
             year: "2024",
             description: "Comprehensive training covering AWS cloud fundamentals, core services, security, and architectural best practices.",
             icon: "fa-cloud",
-            color: "#FF9900",
-            certificateLink: "https://your-aws-certificate-link.com" // Replace with actual link
+            color: "#FF9900"
         },
         {
             title: "AWS Learner Guide Training: Cloud Basics & Core Services",
@@ -132,8 +133,7 @@ const portfolioData = {
             year: "2024",
             description: "In-depth training on cloud computing basics and essential AWS services for modern applications.",
             icon: "fa-server",
-            color: "#FF9900",
-            certificateLink: "https://drive.google.com/file/d/1EcDJF_0vX8qJTAbCNKr9Qb3siyTeRfmp/view?usp=drive_link" // Replace with actual link
+            color: "#FF9900"
         },
         {
             title: "Python for Beginners",
@@ -141,8 +141,7 @@ const portfolioData = {
             year: "2024",
             description: "Foundation course covering Python programming fundamentals, data structures, and basic algorithms.",
             icon: "fa-code",
-            color: "#3776AB",
-            certificateLink: "https://drive.google.com/file/d/1IKFXQyUsG-X0_Di8cV9eyGl-Eg3uT8Zd/view?usp=sharing" // Replace with actual link
+            color: "#3776AB"
         },
         {
             title: "Web Design for Beginners",
@@ -150,8 +149,7 @@ const portfolioData = {
             year: "2024",
             description: "Comprehensive web design course covering HTML, CSS, responsive design principles, and user experience basics.",
             icon: "fa-palette",
-            color: "#E34F26",
-            certificateLink: "https://drive.google.com/file/d/17jLC5PukFFvzG1yJtQha2YtAktgMPnVx/view?usp=drive_link" // Replace with actual link
+            color: "#E34F26"
         },
         {
             title: "Elements of AI",
@@ -159,8 +157,7 @@ const portfolioData = {
             year: "2024",
             description: "Introduction to artificial intelligence concepts, machine learning basics, and AI applications in modern technology.",
             icon: "fa-brain",
-            color: "#0066CC",
-            certificateLink: "https://drive.google.com/file/d/1qiU6zdB8_W89tLpVc-uK0VVovcI70e17/view?usp=drive_link" // Replace with actual link
+            color: "#0066CC"
         }
     ],
 };

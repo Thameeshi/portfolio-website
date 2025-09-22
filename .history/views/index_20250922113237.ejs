@@ -100,13 +100,14 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Hello! I'm <strong><%= data.personal.name %></strong>, a third-year undergraduate student in Information Technology & Management with
-                         a strong interest in <strong>Full-stack development</strong> and modern technologies. I enjoy working on projects that bring together usability, performance, and scalability. 
-                         My experience includes building solutions with React, Node.js, SQLite, and Firebase. Beyond academics, I am a curious learner and tech explorer with a growing 
-                         passion for Cloud Computing, Blockchain, and Web 3.0 based systems. I am always seeking opportunities to apply my skills
-                         in real-world projects and contribute to innovative solutions that push the boundaries of technology.
+                        Hello! I'm <strong><%= data.personal.name %></strong>, a passionate <%= data.personal.title %> and UI/UX Enthusiast. 
+                        I enjoy crafting visually appealing and user-friendly digital experiences, developing scalable backend solutions, 
+                        and exploring new technologies to solve real-world problems.
                     </p>
-
+                    <p>
+                        Currently, I'm a third-year IT undergraduate at the <strong><%= data.personal.university %></strong>. 
+                        I am seeking internship opportunities to learn, grow, and contribute to impactful projects.
+                    </p>
                     <div class="download">
                         <a href="<%= data.personal.resumeLink %>" class="btn-box" target="_blank" rel="noopener noreferrer">
                             Download Resume
@@ -231,12 +232,13 @@
                         </div>
                         <% if (certification.certificateLink) { %>
                             <div class="cert-link">
+                                <p>view</p>
                                 <a href="<%= certification.certificateLink %>" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                aria-label="View <%= certification.title %> certificate"
-                                title="View Certificate">
-                                    View
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   aria-label="View <%= certification.title %> certificate"
+                                   title="View Certificate">
+                                    <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         <% } %>
