@@ -20,7 +20,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 40px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,6 +42,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
+    margin-right: 100px;
 }
 .navbar a {
     display: inline-block;
@@ -49,7 +50,7 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 30px;
+    margin-left: 50px;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -72,8 +73,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 10% 50px;
-    min-height: 100vh;
+    padding: 50px 10%;
+    height: 100vh;
     gap: 50px;
 }
 
@@ -81,27 +82,11 @@ body {
     flex: 1;
     max-width: 600px;
     animation: fadeIn 2s ease-in-out;
+    margin-top: 200px;
 }
-.home-content h3 { 
-    font-size: 32px; 
-    font-weight: 700; 
-    color: #E96AFD; 
-    margin-bottom: 10px; 
-    animation: slideInLeft 1s ease; 
-}
-.home-content h1 { 
-    font-size: 50px; 
-    font-weight: 800; 
-    margin-bottom: 20px; 
-    animation: slideInRight 1.2s ease; 
-}
-.home-content p { 
-    line-height: 1.6; 
-    font-size: 16px; 
-    margin-bottom: 25px; 
-    margin-top: 30px;
-    animation: fadeInUp 1.5s ease; 
-}
+.home-content h3 { font-size: 32px; font-weight: 700; color: #E96AFD; margin-bottom: 10px; animation: slideInLeft 1s ease; }
+.home-content h1 { font-size: 50px; font-weight: 800; margin-bottom: 20px; animation: slideInRight 1.2s ease; }
+.home-content p { line-height: 1.6; font-size: 16px; margin-bottom: 25px; margin-top:50px;animation: fadeInUp 1.5s ease; }
 
 .btn-box {
     display: inline-block;
@@ -123,7 +108,7 @@ body {
 }
 
 /* Social Links */
-.home-sci { margin-top: 40px; }
+.home-sci { margin-top: 50px; }
 .home-sci a {
     display: inline-block;
     width: 40px;
@@ -160,8 +145,11 @@ body {
 
 .image img {
     width: 100%;
-    max-width: 500px;
-    height: auto;
+    max-width: 1500px; /* increase for larger scaling */
+    height: 700px;      /* keeps aspect ratio */
+    margin-left: 100px;
+    margin-top: 100px;
+    transform: scale(1.2); /* scales the image 20% larger */
     transition: transform 0.3s ease;
 }
 
@@ -173,16 +161,11 @@ body {
 
 /* About Section */
 .about {
-    padding: 80px 10%;
+    padding: 70px 10%;
     color: #ededed;
+    margin-top: -100px;
 }
-.about h2 { 
-    font-size: 36px; 
-    font-weight: 700; 
-    color: #0ef; 
-    margin-bottom: 40px; 
-    text-align: center; 
-}
+.about h2 { font-size: 36px; font-weight: 700; color: #0ef; margin-bottom: 40px; text-align: center; margin-top: 100px; }
 
 .download { margin-top: 40px; }
 
@@ -191,32 +174,14 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     flex-direction: row-reverse;
 }
-.container { 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 0 20px; 
-}
-.about-text { 
-    flex: 1; 
-    min-width: 300px; 
-    font-size: 16px; 
-    line-height: 1.8; 
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; margin-top: -50px; }
+.about-text { flex: 1; min-width: 300px; font-size: 16px; line-height: 1.8; }
 .about-text .btn-box { margin-top: 20px; }
-.about-image { 
-    flex: 1; 
-    min-width: 300px; 
-    text-align: center; 
-}
-.about-image img { 
-    max-width: 100%; 
-    width: 400px;
-    height: auto;
-    border-radius: 10px; 
-}
+.about-image { flex: 1; min-width: 400px; text-align: center; }
+.about-image img { max-width: 500px; border-radius: 10px; }
 
 /* Skills Section */
 .skills {
@@ -579,6 +544,50 @@ body {
     margin-right: -80px;
 }
 
+/* Mobile lightbox styles */
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+    
+    .lightbox-image {
+        max-height: 70vh;
+    }
+    
+    .lightbox-close {
+        top: -40px;
+        right: -10px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-caption {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin-top: 15px;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+    }
+    
+    .lightbox-prev {
+        margin-left: -60px;
+    }
+    
+    .lightbox-next {
+        margin-right: -60px;
+    }
+}
+
+/* Add these styles to your CSS file after the Skills section styles */
+
 /* Certifications Section */
 .certifications {
     padding: 80px 10%;
@@ -701,7 +710,7 @@ body {
     width: 35px;
     height: 35px;
     background: linear-gradient(rgba(7, 79, 85, 1));
-    border-radius: 6px;
+    border-radius: 6px; /* small rounding, or set 0 for sharp corners */
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -709,14 +718,105 @@ body {
     box-shadow: 0 4px 15px rgba(14, 239, 255, 0.3);
 }
 
+
 .cert-link a:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(14, 239, 255, 0.5);
-    background: linear-gradient(#afa9afff);
+    background: linear-gradient( #afa9afff);
 }
 
 .cert-link a:active {
     transform: scale(0.95);
+}
+
+/* Responsive Design for Certifications */
+@media (max-width: 1024px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .certification-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .certifications {
+        padding: 60px 5%;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .certification-card {
+        padding: 25px 20px;
+        padding-bottom: 50px; /* Extra space for mobile link */
+    }
+    
+    .cert-content h3 {
+        font-size: 16px;
+    }
+    
+    .cert-icon {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    
+    .certifications h2 {
+        font-size: 28px;
+    }
+    
+    /* Show link on mobile by default */
+    .cert-link {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .cert-link a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .cert-link .view {
+    font-size: 10px; /* smaller font size */
+    padding: 4px 8px; /* optional: adjust padding */
+    background-color: #0ef; /* keep your desired background */
+    color: white;
+    border-radius: 4px; /* optional: rounded corners */
+    text-align: center;
+    display: inline-block;
+}
+
+}
+
+@media (max-width: 480px) {
+    .certification-card {
+        padding: 20px 15px;
+    }
+    
+    .cert-content h3 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .cert-issuer,
+    .cert-year {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    .cert-description {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+    
+    .cert-icon {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
 }
 
 /* Contact Section */
@@ -870,44 +970,8 @@ body {
 @keyframes slideInRight { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Large tablets and small desktops */
+/* Mobile/Tablet Responsive */
 @media (max-width: 1024px) {
-    .header {
-        padding: 15px 5%;
-    }
-    
-    .navbar a {
-        margin-left: 20px;
-        font-size: 16px;
-    }
-    
-    .home {
-        padding: 80px 5% 50px;
-        gap: 40px;
-    }
-    
-    .home-content h1 {
-        font-size: 42px;
-    }
-    
-    .home-content h3 {
-        font-size: 28px;
-    }
-    
-    .image img {
-        max-width: 400px;
-    }
-    
-    .about {
-        padding: 60px 5%;
-    }
-    
-    .about-content {
-        gap: 30px;
-    }
-    
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -920,133 +984,27 @@ body {
     .project-info {
         padding: 20px;
     }
-    
-    .certifications-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    .certification-card {
-        padding: 25px 20px;
-    }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
-    .header {
-        padding: 15px 5%;
-    }
-    
-    .navbar {
-        margin-right: 0;
-    }
-    
-    .navbar a {
-        margin-left: 15px;
-        font-size: 14px;
-    }
-    
-    /* Home section mobile fixes */
     .home {
         flex-direction: column;
         text-align: center;
-        padding: 100px 5% 50px;
-        gap: 30px;
-        min-height: auto;
-    }
-    
-    .home-content {
-        max-width: 100%;
-        order: 2;
-    }
-    
-    .home-content h1 {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-    
-    .home-content h3 {
-        font-size: 24px;
-    }
-    
-    .home-content p {
-        font-size: 14px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .home-sci {
-        margin-top: 30px;
-    }
-    
-    .image {
-        order: 1;
-        margin-top: 0;
-        max-width: 100%;
-    }
-    
-    .image img {
-        max-width: 300px;
-        width: 100%;
-        height: auto;
-    }
-    
-    /* About section mobile fixes */
-    .about {
-        padding: 60px 5%;
-    }
-    
-    .about h2 {
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
-    
-    .about-content {
-        flex-direction: column;
-        text-align: center;
+        padding: 100px 5% 0;
         gap: 30px;
     }
-    
-    .about-text {
-        min-width: 100%;
-        font-size: 14px;
-    }
-    
-    .about-image {
-        min-width: 100%;
-        order: -1;
-    }
-    
-    .about-image img {
-        max-width: 250px;
-        width: 100%;
-    }
-    
-    /* Skills section mobile */
-    .skills {
-        padding: 60px 5%;
-    }
-    
-    .skills h2 {
-        font-size: 28px;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .skill-card {
-        padding: 20px;
-    }
+    .home-content h1 { font-size: 36px; }
+    .home-content h3 { font-size: 24px; }
+    .image { max-width: 200px; margin-top: 20px; }
+    .image img { width: 300px; height: 250px; margin: 0; }
+    .about-content { flex-direction: column; text-align: center; }
+    .about-image img { max-width: 200px; margin-top: 20px; }
+    .navbar a { margin-left: 20px; font-size: 16px; }
+    .header { padding: 15px 5%; }
     
     /* Projects responsive */
     .projects {
         padding: 60px 5%;
-    }
-    
-    .projects h2 {
-        font-size: 28px;
     }
     
     .projects-grid {
@@ -1084,69 +1042,6 @@ body {
         font-size: 18px;
     }
     
-    /* Certifications mobile */
-    .certifications {
-        padding: 60px 5%;
-    }
-    
-    .certifications h2 {
-        font-size: 28px;
-    }
-    
-    .certifications-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .certification-card {
-        padding: 25px 20px;
-        padding-bottom: 50px;
-    }
-    
-    .cert-content h3 {
-        font-size: 16px;
-    }
-    
-    .cert-icon {
-        font-size: 35px;
-        margin-bottom: 15px;
-    }
-    
-    /* Show link on mobile by default */
-    .cert-link {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .cert-link a {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-    .cert-link .view {
-    font-size: 10px; /* smaller font size */
-    padding: 4px 8px; /* optional: adjust padding */
-    background-color: #0ef; /* keep your desired background */
-    color: white;
-    border-radius: 4px; /* optional: rounded corners */
-    text-align: center;
-    display: inline-block;
-}
-
-    
-    /* Contact mobile */
-    .contact {
-        padding: 60px 5%;
-    }
-    
-    .contact h2 {
-        font-size: 28px;
-    }
-    
-    .contact > p {
-        font-size: 16px;
-    }
-    
     .contact-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1162,6 +1057,14 @@ body {
         font-size: 14px;
     }
     
+    .contact h2 {
+        font-size: 28px;
+    }
+    
+    .contact > p {
+        font-size: 16px;
+    }
+    
     .contact-item {
         padding: 20px;
     }
@@ -1173,154 +1076,9 @@ body {
     .contact-item h3 {
         font-size: 18px;
     }
-    
-    /* Lightbox mobile styles */
-    .lightbox-content {
-        max-width: 95vw;
-        max-height: 95vh;
-    }
-    
-    .lightbox-image {
-        max-height: 70vh;
-    }
-    
-    .lightbox-close {
-        top: -40px;
-        right: -10px;
-        font-size: 30px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .lightbox-caption {
-        font-size: 14px;
-        padding: 8px 15px;
-        margin-top: 15px;
-    }
-    
-    .lightbox-prev,
-    .lightbox-next {
-        font-size: 18px;
-        width: 40px;
-        height: 40px;
-        margin: 0 10px;
-    }
-    
-    .lightbox-prev {
-        margin-left: -60px;
-    }
-    
-    .lightbox-next {
-        margin-right: -60px;
-    }
 }
 
-/* Small mobile devices */
 @media (max-width: 480px) {
-    .header {
-        padding: 10px 3%;
-    }
-    
-    .logo {
-        font-size: 16px;
-    }
-    
-    .navbar a {
-        margin-left: 10px;
-        font-size: 12px;
-    }
-    
-    /* Home section very small mobile */
-    .home {
-        padding: 80px 3% 40px;
-        gap: 20px;
-    }
-    
-    .home-content h1 {
-        font-size: 28px;
-        line-height: 1.1;
-    }
-    
-    .home-content h3 {
-        font-size: 20px;
-    }
-    
-    .home-content p {
-        font-size: 13px;
-        line-height: 1.5;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .btn-box {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    .home-sci a {
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        font-size: 16px;
-        margin-right: 10px;
-    }
-    
-    .image img {
-        max-width: 250px;
-    }
-    
-    /* About section very small mobile */
-    .about {
-        padding: 50px 3%;
-    }
-    
-    .about h2 {
-        font-size: 24px;
-        margin-bottom: 25px;
-    }
-    
-    .about-text {
-        font-size: 13px;
-        line-height: 1.6;
-    }
-    
-    .about-image img {
-        max-width: 200px;
-    }
-    
-    /* Skills very small mobile */
-    .skills {
-        padding: 50px 3%;
-    }
-    
-    .skills h2 {
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
-    
-    .skill-card {
-        padding: 15px;
-    }
-    
-    .skill-card h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    
-    .skill-card p {
-        font-size: 13px;
-    }
-    
-    /* Projects very small mobile */
-    .projects {
-        padding: 50px 3%;
-    }
-    
-    .projects h2 {
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
-    
     .projects-grid {
         gap: 1rem;
     }
@@ -1361,56 +1119,6 @@ body {
         font-size: 10px;
     }
     
-    /* Certifications very small mobile */
-    .certifications {
-        padding: 50px 3%;
-    }
-    
-    .certifications h2 {
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
-    
-    .certification-card {
-        padding: 20px 15px;
-    }
-    
-    .cert-content h3 {
-        font-size: 15px;
-        margin-bottom: 12px;
-    }
-    
-    .cert-issuer,
-    .cert-year {
-        font-size: 13px;
-        margin-bottom: 8px;
-    }
-    
-    .cert-description {
-        font-size: 12px;
-        margin-top: 12px;
-    }
-    
-    .cert-icon {
-        font-size: 30px;
-        margin-bottom: 12px;
-    }
-    
-    /* Contact very small mobile */
-    .contact {
-        padding: 50px 3%;
-    }
-    
-    .contact h2 {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-    
-    .contact > p {
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-    
     .contact-form {
         padding: 20px 15px;
     }
@@ -1419,77 +1127,12 @@ body {
         margin-bottom: 20px;
     }
     
-    .form-group input,
-    .form-group textarea {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-    
     .contact-info {
         gap: 20px;
     }
     
     .contact-item {
         padding: 15px;
-    }
-    
-    .contact-item i {
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
-    
-    .contact-item h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
-    
-    .contact-item p {
-        font-size: 14px;
-    }
-    
-    .footer {
-        padding: 20px 3%;
-    }
-    
-    .footer p {
-        font-size: 12px;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 360px) {
-    .home-content h1 {
-        font-size: 24px;
-    }
-    
-    .home-content h3 {
-        font-size: 18px;
-    }
-    
-    .home-content p {
-        font-size: 12px;
-    }
-    
-    .btn-box {
-        padding: 8px 16px;
-        font-size: 13px;
-    }
-    
-    .image img {
-        max-width: 200px;
-    }
-    
-    .about h2,
-    .skills h2,
-    .projects h2,
-    .certifications h2,
-    .contact h2 {
-        font-size: 22px;
-    }
-    
-    .navbar a {
-        font-size: 11px;
-        margin-left: 8px;
     }
 }
 
